@@ -8,11 +8,46 @@
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./container.css');
-@import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px; /* відстань між елементами */
+  padding: 20px;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.gallery a {
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#gallery-loader {
+  display: none; /* respect [hidden] by default */
+}
+#gallery-loader:not([hidden]) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
+}
+
+#gallery-loader .loader-inner > div {
+  background-color: #333 !important;
+}
+
+#gallery-loader .loader-inner.ball-pulse > div {
+  width: 12px !important;
+  height: 12px !important;
+  margin: 3px !important;
+}
